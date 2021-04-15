@@ -5,16 +5,18 @@
 
 function loadWidget(config) {
 	let { waifuPath, apiPath, cdnPath } = config;
-// 	let useCDN = false, modelList;
-// 	if (typeof cdnPath === "string") {
-// 		useCDN = true;
-// 		if (!cdnPath.endsWith("/")) cdnPath += "/";
-// 	} else if (typeof apiPath === "string") {
-// 		if (!apiPath.endsWith("/")) apiPath += "/";
-// 	} else {
-// 		console.error("Invalid initWidget argument!");
-// 		return;
-// 	}
+	//
+	let useCDN = false, modelList;
+	if (typeof cdnPath === "string") {
+		useCDN = true;
+		if (!cdnPath.endsWith("/")) cdnPath += "/";
+	} else if (typeof apiPath === "string") {
+		if (!apiPath.endsWith("/")) apiPath += "/";
+	} else {
+		console.error("Invalid initWidget argument!");
+		return;
+	}
+	//
 	localStorage.removeItem("waifu-display");
 	sessionStorage.removeItem("waifu-text");
 	document.body.insertAdjacentHTML("beforeend", `<div id="waifu">
@@ -181,34 +183,34 @@ function loadWidget(config) {
 			});
 	})();
 
-// 	async function loadModelList() {
-// 		const response = await fetch(`${cdnPath}model_list.json`);
-// 		modelList = await response.json();
-// 	}
+	async function loadModelList() {
+		const response = await fetch(`${cdnPath}model_list.json`);
+		modelList = await response.json();
+	}
 
 	async function loadModel(modelId, modelTexturesId, message) {
 		localStorage.setItem("modelId", modelId);
 		localStorage.setItem("modelTexturesId", modelTexturesId);
 		showMessage(message, 4000, 10);
-// 		if (useCDN) {
-// 			if (!modelList) await loadModelList();
-// 			const target = randomSelection(modelList.models[modelId]);
-// 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
-// 		} else {
+		if (useCDN) {
+			if (!modelList) await loadModelList();
+			const target = randomSelection(modelList.models[modelId]);
+			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
+		} else {
 			loadlive2d("live2d", `${apiPath}get/?id=${modelId}-${modelTexturesId}`);
 			console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
-// 		}
+ 		}
 	}
 
 	async function loadRandModel() {
 		const modelId = localStorage.getItem("modelId"),
 			modelTexturesId = localStorage.getItem("modelTexturesId");
-// 		if (useCDN) {
-// 			if (!modelList) await loadModelList();
-// 			const target = randomSelection(modelList.models[modelId]);
-// 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
-// 			showMessage("我的新衣服好看嘛？", 4000, 10);
-// 		} else {
+		if (useCDN) {
+			if (!modelList) await loadModelList();
+			const target = randomSelection(modelList.models[modelId]);
+			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
+			showMessage("我的新衣服好看嘛？", 4000, 10);
+		} else {
 			// 可选 "rand"(随机), "switch"(顺序)
 			fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
 				.then(response => response.json())
@@ -216,22 +218,22 @@ function loadWidget(config) {
 					if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
 					else loadModel(modelId, result.textures.id, "我的新衣服好看嘛？");
 				});
-// 		}
+		}
 	}
 
 	async function loadOtherModel() {
 		let modelId = localStorage.getItem("modelId");
-// 		if (useCDN) {
-// 			if (!modelList) await loadModelList();
-// 			const index = (++modelId >= modelList.models.length) ? 0 : modelId;
-// 			loadModel(index, 0, modelList.messages[index]);
-// 		} else {
+		if (useCDN) {
+			if (!modelList) await loadModelList();
+			const index = (++modelId >= modelList.models.length) ? 0 : modelId;
+			loadModel(index, 0, modelList.messages[index]);
+		} else {
 			fetch(`${apiPath}switch/?id=${modelId}`)
 				.then(response => response.json())
 				.then(result => {
 					loadModel(result.model.id, 0, result.model.message);
 				});
-// 		}
+		}
 	}
 }
 
