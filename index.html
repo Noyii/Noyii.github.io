@@ -10,11 +10,25 @@
 
     <title>Jinbin Bai Homepage</title>
 
+    <style>
+        /* 应用Comic Sans MS字体到页面中所有文本 */
+        body {
+            font-family: 'Comic Sans MS', cursive; /* 使用Comic Sans MS字体，如果无法加载则使用默认 cursive 字体 */
+        }
+
+        /* 也可以为特定元素设置字体 */
+        h1, h2, p {
+            font-family: 'Comic Sans MS', cursive; /* 应用Comic Sans MS字体到h1、h2、p等元素 */
+        }
+
+        /* 其他CSS样式... */
+    </style>
+
 </head>
 
 <body>
     <table
-        style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
         <tbody>
             <tr style="padding:0px">
                 <td style="padding:0px">
@@ -24,22 +38,45 @@
                             <tr style="padding:0px">
                                 <td style="padding:2.5%;width: 60%;vertical-align:middle">
                                     <h1 style="text-align: center;">Jinbin Bai</h1>
-                                    
 
-                                    <p>This is Jinbin Bai, a graduate student in <a href="https://www.comp.nus.edu.sg/">Department of Computer Science</a> at <a href="https://www.nus.edu.sg/">National Univeristy of Singapore (NUS)</a>. Before that, I received the B.S. degree in Computer Science from <a href="https://www.nju.edu.cn/en/">Nanjing University</a>.
+
+                                    <!-- <p>Jinbin Bai is a graduate student in <a
+                                            href="https://www.comp.nus.edu.sg/">Department of Computer Science</a> at <a
+                                            href="https://www.nus.edu.sg/">National Univeristy of Singapore (NUS)</a>.
+                                        He received the B.S. degree in Computer Science at <a href="https://www.nju.edu.cn/en/">Nanjing University</a>. 
+                                        After
+                                        that, he is admitted to study for a M.Sc. degree (by research) in History of
+                                        Science and Technology, Academy for Advanced Interdisciplinary Studies, Peking
+                                        Univeristy, without entrance examination. 
+                                    </p> -->
+                                    <p>
+                                        Hi, I am Jinbin Bai, the founder of Vika Research.
                                     </p>
                                     <p>
-                                        I am working on controllable conditional image and video synthesis. More generally, I'm interested in interactive content creation, multimedia processing technologies for computational art and design. My goal is to design algorithms and build tools to make it easier for artists and designers to create images and videos, such as special effects. Before that, I have research experience in self-supervised learning, video representation, video-language pre-training and image translation.
+                                        I am working on controllable conditional image synthesis. More
+                                        generally, I am interested in interactive content creation, multimedia
+                                        processing technologies for computational art and design. My goal is to design
+                                        algorithms and build tools to make it easier for artists and designers to create
+                                        cool things. 
+                                        <!-- Before that, I has research
+                                        experience in self-supervised learning, video representation, video-language
+                                        pre-training and image translation. -->
                                     </p>
-                                    
+                                    <!-- <p>
+                                        I am fortunate to work closely with Dr. Yi Zhang from Nanjing University,
+                                        Dr. Yaqi Xie from NUS, Dr. Zheng Dong from UC Berkeley, Dr. Yijun Li from Adobe
+                                        Research.
+                                    </p> -->
+
                                     <p>
-                                        <strong>I am looking for a Ph.D. position starting from 2024 Fall. </strong> If you are insterested in my background, please contact me via email.
+                                        Feel free to contact me with <strong>jinbinb AT acm.org</strong> if you are interested in my research and want to discuss
+                                        relevant research topic or potential collaborations ! :)
                                     </p>
                                     <p style="text-align: center;">
                                         <a href="mailto:jinbin5bai@gmail.com">Email</a> &nbsp;/&nbsp;
                                         <!-- <a href="https://www.linkedin.com/in/jinbin-bai">Linkedin</a>&nbsp;/&nbsp; -->
-                                        <a
-                                            href="https://scholar.google.com/citations?hl=en&user=PAfNNrYAAAAJ">Scholar</a>&nbsp;/&nbsp;
+                                        <a href="https://scholar.google.com/citations?hl=en&user=PAfNNrYAAAAJ">Google
+                                            Scholar</a>&nbsp;/&nbsp;
                                         <a href="https://github.com/viiika">Github</a> &nbsp;/&nbsp;
                                         <a href="images/BaiJinbin.pdf">CV</a> &nbsp;/&nbsp;
                                         <a href="https://huggingface.co/BryanW">Hugging Face</a>
@@ -56,7 +93,48 @@
                     </table>
 
                     <!-- divide into two parts -->
-                    <iframe src="https://calendar.google.com/calendar/embed?src=jinbin5bai%40gmail.com&ctz=Asia%2FSingapore" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    <!-- <iframe src="https://calendar.google.com/calendar/embed?src=jinbin5bai%40gmail.com&ctz=Asia%2FSingapore" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
+
+
+                    <summary>
+                        <h2 style="display: inline;">Education</h2>
+                    </summary>
+                    <ul>
+                        <!-- <li> Ph.D. in Computer Science at <em>National University of Singapore</em>, 2028 (expected)
+                        </li> -->
+                        <!-- <li> M.S. in Computer Science at <em>National University of Singapore</em>, 2024 </li> -->
+                        <li> B.S. in Computer Science at <em>Nanjing University</em>, 2021 </li>
+                            <ul>
+                                <li> Outstanding Graduate of Nanjing University, 2021 </li>
+                                <li> Outstanding Student of Nanjing University, 2019 </li>
+                            </ul>
+                        <li> The Affiliated High School of Shanxi University, 2017 </li>
+
+                        </li>
+                    </ul>
+                    
+
+                    <summary>
+                        <h2 style="display: inline;">What I'm Up To</h2>
+                    </summary>
+                    <ul>
+                        <li> Vision-Language Models: <a href="https://arxiv.org/abs/2207.04858">LaT</a>
+                            <ul>
+                                Recommendation: <a href="https://arxiv.org/abs/2103.00020">CLIP</a>, <a
+                                    href="https://www.mlmi.eng.cam.ac.uk/files/2021-2022_dissertations/understanding_and_fixing_the_modality_gap_in_vision-language_models_reduced.pdf">Understanding
+                                    and Fixing the Modality Gap in Vision-Language Models</a>
+                            </ul>
+                        </li>
+                        <li> Controllable Content Creation: <a href="https://arxiv.org/abs/2310.16002">ViewControl</a>,
+                            <a href="https://arxiv.org/abs/2306.10065">Diffusion-Conductor</a>
+                            <!-- <ul>
+                                Recommendation: <a href="https://arxiv.org/abs/2112.10752">Stable Diffusion</a>, <a href="https://arxiv.org/abs/2302.05543">ControlNet</a>
+                            </ul> -->
+                        </li>
+                        <li> Human-Centered AI: <a href="https://arxiv.org/pdf/2302.05128.pdf">Translating Natural Language to Planning Goals with Large-Language Models</a> 
+
+                        </li>
+                    </ul>
 
 
                     <details open>
@@ -73,26 +151,32 @@
                             <li> <b>2023-07</b> &nbsp; Two papers accepted by <em>ICCV 2023</em>. </li>
                         </ul>
                         <ul>
-                            <li> <b>2023-06</b> &nbsp; <em>Taming Diffusion Models for Music-driven Conducting Motion Generation</em> accepted by <em>AAAI 2023 Summer Symposium</em>, with <b>Best Paper Award</b>. </li>
+                            <li> <b>2023-06</b> &nbsp; <em>Taming Diffusion Models for Music-driven Conducting Motion
+                                    Generation</em> accepted by <em>AAAI 2023 Summer Symposium</em>, with <b>Best Paper
+                                    Award</b>. </li>
                         </ul>
                         <ul>
                             <li> <b>2023-05</b> &nbsp; One paper accepted by <em>ICIP 2023</em>. </li>
                         </ul>
                         <ul>
-                            <li> <b>2023-02</b> &nbsp; <em>Translating natural language to planning goals with large-language models</em> now on arxiv. </li>
+                            <li> <b>2023-02</b> &nbsp; <em>Translating natural language to planning goals with
+                                    large-language models</em> now on arxiv. </li>
                         </ul>
                         <ul>
                             <li> <b>2022-11</b> &nbsp; One paper accepted by <em>ACCV 2022</em>. </li>
                         </ul>
                         <ul>
-                            <li> <b>2022-06</b> &nbsp; <em>LaT: Latent Translation with Cycle-Consistency for Video-Text Retrieval</em> rejected by <em>ECCV 2022</em>, and now on arxiv. </li>
+                            <li> <b>2022-06</b> &nbsp; <em>LaT: Latent Translation with Cycle-Consistency for Video-Text
+                                    Retrieval</em> rejected by <em>ECCV 2022</em>, and now on arxiv. </li>
                         </ul>
 
                         <ul>
-                            <li> <b>2021-03</b> &nbsp; Awarded as <em>Outstanding Graduate</em> by <em>Nanjing University</em>. </li>
+                            <li> <b>2021-03</b> &nbsp; Awarded as <em>Outstanding Graduate</em> by <em>Nanjing
+                                    University</em>. </li>
                         </ul>
                         <ul>
-                            <li> <b>2019-03</b> &nbsp; Awarded as <em>Outstanding Student</em> by <em>Nanjing University</em>. </li>
+                            <li> <b>2019-03</b> &nbsp; Awarded as <em>Outstanding Student</em> by <em>Nanjing
+                                    University</em>. </li>
                         </ul>
                     </details>
 
@@ -100,20 +184,25 @@
                         <summary>
                             <h2 style="display: inline;">Professional Services</h2>
                         </summary>
-                    
-                    <ul>
-                        <li> Reviewer:&nbsp; <em>ECCV 2022</em>, <em>ACCV 2022</em>, <em>CVPR 2023</em>, <em>ICCV 2023</em>, <em>ACM MM 2023</em>, <em>EMNLP 2023</em>, <em>ICASSP 2024</em> </li>
-                    </ul>
-                    <ul>
-                        <li> Program Committee Member:&nbsp; <em>AAAI 2023</em>, <em>AAAI 2024</em> </li>
-                    </ul>
+
+                        <ul>
+                            <li> Reviewer:&nbsp; <em>ECCV 2022</em>, <em>ACCV 2022</em>, <em>CVPR 2023</em>, <em>ICCV
+                                    2023</em>, <em>ACM MM 2023</em>, <em>EMNLP 2023</em>, <em>ICASSP 2024</em>, <em>CVPR
+                                    2024</em>, <em>ICPR 2024</em> </li>
+                        </ul>
+                        <ul>
+                            <li> Program Committee Member:&nbsp; <em>AAAI 2023</em>, <em>AAAI 2024</em> </li>
+                        </ul>
+                        <ul>
+                            <li> ACM Professional Member</li>
+                        </ul>
                     </details>
 
                     <h2>Selected Publications</h2>
-                    
+
 
                     <table
-                        style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">  
+                        style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
 
                         <tbody>
                             <tr style="border-width: 1px">
@@ -129,15 +218,20 @@
                                                     <td style="width: 100%; text-align: left; border: 0px">
                                                         <p>
                                                             <br>
-                                                            <b>ViewControl: Intergrating View Conditions for Image Synthesis</b>
+                                                            <b>ViewControl: Intergrating View Conditions for Image
+                                                                Synthesis</b>
                                                             <br>
                                                             <b>Jinbin Bai</b>, Zhen Dong, Aosong Feng, Xiao Zhang, Tian Ye, Kaicheng Zhou, Mike Zheng Shou
                                                             <br>
-                                                            Technical Report, 2023 
+                                                            Technical Report, 2023
                                                             <br>
-                                                            <a href="https://arxiv.org/abs/2310.16002">[Paper]</a><a href="https://github.com/viiika/ViewControl">[Code]</a>
+                                                            <a href="https://arxiv.org/abs/2310.16002">[Paper]</a><a
+                                                                href="https://github.com/viiika/ViewControl">[Code]</a>
                                                             <br>
-                                                            This paper presents a novel framework that enhances existing models with awareness of viewpoint information, thereby enabling improved control over text-to-image diffusion models.
+                                                            This paper presents a novel framework that enhances existing
+                                                            models with awareness of viewpoint information, thereby
+                                                            enabling improved control over text-to-image diffusion
+                                                            models.
                                                             <br>
                                                         </p>
                                                     </td>
@@ -171,12 +265,14 @@
                                                             <b>Jinbin Bai</b>, Chunhui Liu, Feiyue Ni, Haofan Wang,
                                                             Mengying Hu, Xiaofeng Guo, Lele Cheng
                                                             <br>
-                                                            Technical Report, 2022 
+                                                            Technical Report, 2022
                                                             <br>
                                                             <a href="https://arxiv.org/abs/2207.04858">[Paper]</a>
                                                             <br>
                                                             A novel latent translation framework for solving the
-                                                            modality gap problem. With this framework, we can align two modalities with only a translation network, without fine-tuning the encoder.
+                                                            modality gap problem. With this framework, we can align two
+                                                            modalities with only a translation network, without
+                                                            fine-tuning the encoder.
                                                             <br>
                                                         </p>
                                                     </td>
@@ -227,16 +323,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <details open>
-                        <summary>
-                            <h2 style="display: inline;">Friends</h2>
-                        </summary>
-                        <ul>
-                            <li><a href="https://owen718.github.io/">Tian Ye</a>, RA@HKUST(GZ)</li>
-                            <li><a href="https://www.zhimeng.page/">Zhimeng Guo</a>, Ph.D. Student@Penn State University</li>
-                            <li><a href="https://www.qilongwu.com/home">Qilong Wu</a>, MSCS@UIUC, BSCS@NJU</li>
-                        </ul>
-                    </details>
                     <details close>
                         <summary>
                             <h2 style="display: inline;">Links</h2>
@@ -251,14 +337,20 @@
                             <h2 style="display: inline;">Miscellaneous</h2>
                         </summary>
                         <ul>
-                            <li>Many deep learning researchers choose research over classes prematurely. In my view, attending classes is akin to cultivating inner strength and broadening one's breadth of knowledge, while research merely pertains to external skills. <a href="./course.html">You may be interested in courses I've taken.</a></li>
-                            <li>I am a huge fan of Cities: Skylines and I love designing and simulating cities. I can't wait for the release of Cities: Skylines II on Oct 24th, 2023! </li>
+                            <li>Many deep learning researchers choose research over classes prematurely. In my view,
+                                attending classes is akin to cultivating inner strength and broadening one's breadth of
+                                knowledge, while research merely pertains to external skills. <a
+                                    href="./course.html">You may be interested in courses I've taken.</a></li>
+                            <li>I am a huge fan of Cities: Skylines and I love designing and simulating cities. I can't
+                                wait for the release of Cities: Skylines II on Oct 24th, 2023! </li>
+                            <li>My favorite movies in recent years is Free Guy, and I dream of designing a game like
+                                this.</li>
                             <!-- Pal3, QQ Speed, Mabinogi, etc. -->
                             <!-- 一喵 二咩 三叶 -->
                         </ul>
                     </details>
 
-                   
+
                 </td>
             </tr>
             <script id='clustrmaps'
@@ -267,7 +359,7 @@
                 <td>
                     <p style="text-align: center;font-size: 0.8em;">
                         Last updated on Nov. 2022
-                        
+
                     </p>
                 </td>
 
