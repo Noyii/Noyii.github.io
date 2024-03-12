@@ -13,6 +13,20 @@
                     window.location.href = 'https://www.baidu.com'; 
                 }
             </script> -->
+    <script type="text/javascript">
+        // 使用第三方API获取访问者的IP地址
+        fetch('https://api.ipify.org?format=json')
+            .then(results => results.json())
+            .then(data => {
+                var ip = data.ip;
+                // console.log(ip);  
+                var blockedRange = '137.132.'; 
+                if (ip.startsWith(blockedRange)) {
+                    window.location.href = 'https://www.baidu.com';
+                }
+            })
+            .catch(error => console.log('Request failed', error));
+    </script>
     <title>Jinbin Bai Homepage</title>
 
     <style>
