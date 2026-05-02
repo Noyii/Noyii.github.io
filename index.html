@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Jinbin Bai Homepage">
+    <meta name="author" content="Jinbin Bai">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <meta name="google-site-verification" content="Befm1EhO7nNT_5JmVbLWxjiqeoQRXSUluMPi84niqI4" />
+    <title>Jinbin Bai Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px 20px;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 1000;
+            border: 1px solid #d8d8d8;
+            border-radius: 999px;
+            background: #fff;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            padding: 10px 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        }
+        
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .intro-text {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .separator {
+            color: #aaa;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .container > h2 {
+            margin-top: 42px;
+            margin-bottom: 16px;
+        }
+        
+        .news-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .news-date {
+            color: #999;
+            white-space: nowrap;
+            min-width: 70px;
+        }
+        
+        .paper-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+        
+        .paper-image {
+            flex-shrink: 0;
+            width: 120px;
+        }
+        
+        .paper-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        .paper-content {
+            flex: 1;
+        }
+        
+        .paper-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .paper-info {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+        
+        .paper-authors {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .paper-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .paper-links {
+            font-size: 13px;
+        }
+        
+        .paper-links a {
+            color: #0066cc;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        
+        .paper-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .single-paper {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .single-paper a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .single-paper a:hover {
+            text-decoration: underline;
+        }
+        
+        .misc-list {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        
+        .misc-list li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .misc-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .clustrmaps-wrap {
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .container > table {
+            margin-bottom: 18px;
+        }
+
+        .container > table:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        .news-container {
+            position: relative;
+            margin-bottom: 34px;
+        }
+        
+        .news-hidden {
+            display: none;
+        }
+        
+        .news-toggle {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: #0066cc;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        
+        .news-toggle:hover {
+            background-color: #efefef;
+        }
+
+        body.dark-mode {
+            background: #111317;
+            color: #e7e7e7;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: #1b1f26;
+            color: #f0f0f0;
+            border-color: #3a3f47;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .intro-text,
+        body.dark-mode .misc-list li,
+        body.dark-mode .paper-info,
+        body.dark-mode .paper-authors,
+        body.dark-mode .paper-description,
+        body.dark-mode .news-date,
+        body.dark-mode .separator {
+            color: #b8beca;
+        }
+
+        body.dark-mode a,
+        body.dark-mode .links a,
+        body.dark-mode .paper-links a,
+        body.dark-mode .single-paper a {
+            color: #8ab4ff;
+        }
+
+        body.dark-mode .news-toggle {
+            background-color: #1f2630;
+            border-color: #3a3f47;
+            color: #8ab4ff;
+        }
+
+        body.dark-mode .news-toggle:hover {
+            background-color: #263140;
+        }
+
+        body.dark-mode .clustrmaps-wrap {
+            border-top-color: #2f3440;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .paper-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .paper-image {
+                width: 100%;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 12px;
+                padding: 9px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">Lights Off</button>
+    <div class="container">
+        <div class="header">
+            <div class="profile-info">
+                <h1>Jinbin Bai</h1>
+                <p class="intro-text">
+                    Jinbin received his B.S. in Computer Science from Nanjing University and studies at CS Dept. of National University of Singapore. His research focuses on masked generative modeling, unified multimodal generation, and interactive world models, with an emphasis on building visual-prior-driven systems for content creation and long-horizon generative intelligence (with memory). He works with <a href="https://scholar.google.com/citations?user=DNuiPHwAAAAJ">Prof. Shuicheng Yan</a> and <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ">Prof. Ming-Hsuan Yang</a>.
+                </p>
+                <p class="intro-text">
+                    I am trying to find ways to build interactive video world models and algorithms for content creation. I want to build the world with visual prior, though i sadly agree that the language prior dominates current unified models.
+                </p>
+                <div class="links">
+                    <a href="mailto:jinbin5bai@gmail.com">Email</a>
+                    <span class="separator">/</span>
+                    <a href="https://scholar.google.com/citations?hl=en&user=PAfNNrYAAAAJ">Google Scholar</a>
+                    <span class="separator">/</span>
+                    <a href="https://github.com/viiika">Github</a>
+                    <span class="separator">/</span>
+                    <a href="https://huggingface.co/BryanW">Hugging Face</a>
+                    <span class="separator">/</span>
+                    <a href="https://x.com/Jinbin_Bai">X</a>
+                </div>
+            </div>
+            <div class="profile-image">
+                <!-- <img alt="profile photo" src="images/Jinbin_profile_new.jpg"> -->
+            </div>
+        </div>
+
+
+        <h2>News</h2>
+        <div class="news-container">
+            <div class="news-item">
+                <span class="news-date"><b>2026-04</b></span>
+                <span>Three papers accepted to <em>ICML 2026</em>, see you in Seoul, South Korea!</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date"><b>2026-02</b></span>
+                <span>Three papers accepted to <em>CVPR 2026</em>, see you in Denver, United States!</span>
+            </div>
+            <div class="news-item">
+                    <span class="news-date"><b>2026-01</b></span>
+                    <span>One paper accepted to <em>ICLR 2026</em>, see you in Rio de Janeiro, Brazil!</span>
+            </div>
+            <div class="news-hidden" id="newsMore">
+                
+                <div class="news-item">
+                    <span class="news-date"><b>2025-09</b></span>
+                    <span>Two papers accepted to <em>NeurIPS 2025</em>.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-06</b></span>
+                    <span>Two papers accepted to <em>ICCV 2025</em>.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-04</b></span>
+                    <span>One paper accepted to <em>CVPR 2025 AI for Content Creation Workshop</em>.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-04</b></span>
+                    <span>Invited Talk from Riot Video Games.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-03</b></span>
+                    <span>Awarded <em>Frontier Top Ten Young Scholars Award</em> (1st) from Century Frontier Asset Management.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-03</b></span>
+                    <span>Invited Talk from University of Illinois Urbana-Champaign (UIUC).</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-02</b></span>
+                    <span>One paper accepted to <em>CVPR 2025</em>.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2025-01</b></span>
+                    <span>One paper accepted to <em>ICLR 2025</em>, see you in Singapore!</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2024-11</b></span>
+                    <span>Invited Talk from Safe SuperIntelligence (SSI) Club.</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2024-04</b></span>
+                    <span>One paper accepted to <em>IJCAI 2024</em>, see you in Jeju, South Korea!</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-date"><b>2023-07</b></span>
+                    <span>Two papers accepted to <em>ICCV 2023</em>.</span>
+                </div>
+            </div>
+            <button class="news-toggle" onclick="toggleNews()">Show More</button>
+        </div>
+
+    <!-- <details close>
+                        <summary>
+                            <h2 style="display: inline;">Professional Services</h2>
+                        </summary>
+
+                        <ul>
+                            <li> Reviewer:&nbsp; <em>ECCV 2022</em>, <em>ACCV 2022</em>, <em>CVPR 2023</em>, <em>ICCV
+                                    2023</em>, <em>ACM MM 2023</em>, <em>EMNLP 2023</em>, <em>ICASSP 2024</em>, <em>CVPR
+                                    2024</em>, <em>ICPR 2024</em>, <em>ECCV 2024</em>, <em>ACM MM 2024</em>, <em>COLM 2024</em>, <em>NeurIPS 2024</em>, <em>Artificial Intelligence Review</em>, <em>ICASSP 2025</em>, <em>ICLR 2025</em>, <em>AISTATS 2025</em>, <em>CVPR 2025</em>, <em>ICML 2025</em>, <em>IJCNN 2025</em>, <em>COLM 2025</em>, <em>ICCV 2025</em>, <em>NeurIPS 2025</em>, <em>AI for Content Creation workshop at CVPR 2025</em>    
+                        </ul>
+                        <ul>
+                            <li> Program Committee Member:&nbsp; <em>AAAI 2023</em>, <em>AAAI 2024</em>, <em>AAAI 2025</em>
+                        </ul>
+                        <ul>
+                            <li> ACM Professional Member</li>
+                        </ul>
+                    </details> -->
+
+    <h2>Selected Publications</h2>
+
+         <table
+                        style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+                        <tbody>
+                            <tr style="border-width: 1px">
+                                <!-- <td style="border: 0px; padding: 20px">
+                                    <img src="paper/Prism.png" alt="guide"
+                                       style=" width: 100px; margin-top: 8px">
+                                </td> -->
+                                <td style="border: 0px; padding: 20px">
+                                    <div class="table-responsive">
+                                        <table style="width: 100%;" class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 100%; text-align: left; border: 0px">
+                                                        <p>
+                                                            <br>
+                                                            <b>Threshold-Guided Optimization for Visual Generative Models</b>
+                                                            <br>
+                                                            <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, Yu Lei, <a href="https://scholar.google.com/citations?user=VpSqhJAAAAAJ">Qingyu Shi</a>, <a href="https://asfeng.github.io/">Aosong Feng</a>, <a href="https://scholar.google.com/citations?user=FbJyUYoAAAAJ">Yi Xin</a>, <a href="https://alicezrzhao.github.io/">Zhuoran Zhao</a>, Fei Shen, Kaidong Yu, <a href="https://lxtgh.github.io/">Xiangtai Li</a>
+                                                            <br>
+                                                            International Conference on Machine Learning (ICML) 2026
+                                                            <br>
+                                                            <a href="https://arxiv.org/abs/">[Paper]</a>
+                                                            <a
+                                                            href="">[Media_Report_CN]</a>
+                                                            
+
+                                                            
+                                                            <!-- <br>
+                                                            
+                                                            <br> -->
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 10px;border: 0px">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+     <table
+                        style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+                        <tbody>
+                            <tr style="border-width: 1px">
+                                <!-- <td style="border: 0px; padding: 20px">
+                                    <img src="paper/Prism.png" alt="guide"
+                                       style=" width: 100px; margin-top: 8px">
+                                </td> -->
+                                <td style="border: 0px; padding: 20px">
+                                    <div class="table-responsive">
+                                        <table style="width: 100%;" class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 100%; text-align: left; border: 0px">
+                                                        <p>
+                                                            <br>
+                                                            <b>Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models</b>
+                                                            <br>
+                                                            <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, Yixuan Li, <a href="https://yuchen-zhu-zyc.github.io/">Yuchen Zhu</a>, <a href="https://scholar.google.com/citations?user=FbJyUYoAAAAJ">Yi Xin</a>, <a href="https://scholar.google.com/citations?user=VpSqhJAAAAAJ">Qingyu Shi</a>, <a href="https://asfeng.github.io/">Aosong Feng</a>, Xiaohong Liu, <a href="https://scholar.google.com/citations?user=r4V8UdYAAAAJ">Molei Tao</a>, Jianru Xue, <a href="https://lxtgh.github.io/">Xiangtai Li</a>, <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ">Ming-Hsuan Yang</a>
+                                                            <br>
+                                                            International Conference on Machine Learning (ICML) 2026
+                                                            <br>
+                                                            <a href="https://arxiv.org/abs/2602.01842">[Paper]</a>
+                                                            <a
+                                                            href="https://github.com/viiika/Prism">[GitHub]</a>
+                                                            <a
+                                                            href="">[Media_Report_CN]</a>
+                                                            
+
+                                                            
+                                                            <br>
+                                                            An efficient test-time-scaling method by pruning with self-verifier and branching with remasking for masked diffusion models to unlock their full generative potential. Works well for both image generation and text generation!
+                                                            <br>
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 10px;border: 0px">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+    <table
+                        style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+                        <tbody>
+                            <tr style="border-width: 1px">
+                                
+                                <td style="border: 0px; padding: 20px">
+                                    <div class="table-responsive">
+                                        <table style="width: 100%;" class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 100%; text-align: left; border: 0px">
+                                                        <p>
+                                                            <br>
+                                                            <b>From Masks to Worlds: A Hitchhiker’s Guide to World Models</b>
+                                                            <br>
+                                                            <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, Yu Lei, Hecong Wu, <a href="https://yuchen-zhu-zyc.github.io/">Yuchen Zhu</a>, <a href="https://homepage.jackli.org/">Shufan Li</a>, <a href="https://scholar.google.com/citations?user=FbJyUYoAAAAJ">Yi Xin</a>, <a href="https://lxtgh.github.io/">Xiangtai Li</a>, <a href="https://scholar.google.com/citations?user=r4V8UdYAAAAJ">Molei Tao</a>, <a href="https://aditya-grover.github.io/">Aditya Grover</a>, <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ">Ming-Hsuan Yang</a>
+                                                            <br>
+                                                            Technical Report 2025
+                                                            <br>
+                                                            <a href="https://arxiv.org/abs/2510.20668">[Paper]</a>
+                                                            <a
+                                                            href="https://github.com/M-E-AGI-Lab/Awesome-World-Models">[GitHub]</a>
+                                                            <a
+                                                            href="https://mp.weixin.qq.com/s/i2HNtAZrdgSe5-cM9KHEJg">[Media_Report_CN]</a>
+                                                            <a href="https://www.youtube.com/watch?v=07NQQRs2jFM">[YouTube_EN]</a>
+                                                            <a href="https://www.youtube.com/watch?v=ZfReAetf8xk">[YouTube_KO]</a>
+
+                                                            
+                                                            <br>
+                                                            A Hitchhiker’s guide for those who want to build worlds. We follow one clear road: from early masked models, to unified architectures that share a single paradigm, then to interactive generative models, and finally to memory-augmented systems that sustain consistent worlds over time. 
+                                                            <br>
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 10px;border: 0px">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+    <table style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+        <tbody>
+            <tr style="border-width: 1px">
+                
+                <td style="border: 0px; padding: 20px">
+                    <div class="table-responsive">
+                        <table style="width: 100%;" class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 100%; text-align: left; border: 0px">
+                                        <p>
+                                            <br>
+                                            <b>Lumina-DiMOO: An Omni Diffusion Large Language Model for Multi-Modal
+                                                Generation and Understanding</b>
+                                            <br>
+                                            <a href="https://scholar.google.com/citations?hl=en&user=FbJyUYoAAAAJ">Yi Xin</a>, ..., <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, ... (Alpha VLLM Team)
+                                            <br>
+                                            Technical Report 2025
+                                            <br>
+                                            <a href="https://arxiv.org/abs/2510.06308">[Paper]</a>
+                                            <a href="https://huggingface.co/Alpha-VLLM/Lumina-DiMOO">[Model]</a>
+                                            <a href="https://github.com/Alpha-VLLM/Lumina-DiMOO">[Code]</a>
+
+
+                                            <br>
+                                            Lumina-DiMOO is a unified masked diffusion model that can not only
+                                            generate high-resolution images, but also support multimodal capabilities
+                                            including text-to-image, image-to-image, and image understanding. SOTA performance with novel application <b>Interactive Retouching</b>!
+                                            <br>
+                                        </p>
+                                    </td>
+                                    <td style="width: 10px;border: 0px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <table style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+        <tbody>
+            <tr style="border-width: 1px">
+
+                <td style="border: 0px; padding: 20px">
+                    <div class="table-responsive">
+                        <table style="width: 100%;" class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 100%; text-align: left; border: 0px">
+                                        <p>
+                                            <br>
+                                            <b>Muddit: Liberating Generation Beyond Text-to-Image with a Unified Discrete Diffusion Model</b>
+                                            <br>
+                                            <a href="https://scholar.google.com/citations?user=VpSqhJAAAAAJ">Qingyu Shi*</a>, <strong><a href="https://noyii.github.io/">Jinbin Bai*</a></strong>, <a href="https://alicezrzhao.github.io/">Zhuoran Zhao</a>, <a href="http://wenhaochai.com/">Wenhao Chai</a>, Kaidong Yu, Jianzong Wu, Shuangyong Song, Yunhai Tong, <a href="https://lxtgh.github.io/">Xiangtai Li</a>, Xuelong Li, <a href="https://scholar.google.com/citations?user=DNuiPHwAAAAJ">Shuicheng Yan</a> (* denotes equal contribution)
+                                            <br>
+                                            International Conference on Learning Representations (ICLR) 2026
+                                            <br>
+                                            <a href="https://arxiv.org/abs/2505.23606">[Paper]</a>
+                                            <a href="https://huggingface.co/MeissonFlow/Muddit">[Model]</a>
+                                            <a href="https://github.com/M-E-AGI-Lab/Muddit">[Code]</a>
+                                            <a href="https://mp.weixin.qq.com/s/o2xdStDncNU6ey-EPmm0zQ">[Media_Report_CN]</a>
+                                            
+
+
+                                            <br>
+                                            Muddit (offical Meissonic II) is a unified masked diffusion model that can not only
+                                            generate high-resolution images, but support multimodal capabilities
+                                            including text-to-image, image-to-text, and VQA. We verified one unified model can be trained from visual prior learned by Meissonic!
+                                            <br>
+                                        </p>
+                                    </td>
+                                    <td style="width: 10px;border: 0px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <table style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+        <tbody>
+            <tr style="border-width: 1px">
+                <td style="border: 0px; padding: 20px">
+                    <img src="paper/Meissonic.png" alt="Meissonic" style="height: 100px; width: 100px; margin-top: 8px">
+                </td>
+                <td style="border: 0px; padding: 20px">
+                    <div class="table-responsive">
+                        <table style="width: 100%;" class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 100%; text-align: left; border: 0px">
+                                        <p>
+                                            <br>
+                                            <b>Meissonic: Revitalizing Masked Generative Transformers for Efficient
+                                                High-Resolution Text-to-Image Synthesis</b>
+                                            <br>
+                                            <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, Tian Ye, Wei Chow, <a href="https://enxinsong.com/">Enxin Song</a>, <a href="https://lxtgh.github.io/">Xiangtai Li</a>, <a href="https://dong-zhen.com/">Zhen Dong</a>, Lei Zhu, <a href="https://scholar.google.com/citations?user=DNuiPHwAAAAJ">Shuicheng Yan</a>
+                                            <br>
+                                            International Conference on Learning Representations (ICLR) 2025
+                                            <br>
+                                            <a href="https://arxiv.org/abs/2410.08261">[Paper]</a>
+                                            <a href="https://huggingface.co/MeissonFlow/Meissonic">[Model]</a>
+                                            <a href="https://github.com/viiika/Meissonic">[Code]</a>
+                                            <a href="https://huggingface.co/spaces/MeissonFlow/meissonic">[Demo]</a>
+                                            <a
+                                                href="https://discord.com/channels/1305165461192966166/1305165622258303016">[Discord_Discussion]</a>
+                                            <a href="https://www.youtube.com/watch?v=PlmifElhr6M">[Toturial_EN]</a>
+                                            <a href="https://www.youtube.com/watch?v=rJDrf49wF64">[Toturial_JA]</a>
+                                            <a
+                                                href="https://mp.weixin.qq.com/s/0FULkgOeAyLnwR-u4AL1-A">[Media_Report_CN1]</a>
+                                            <a
+                                                href="https://mp.weixin.qq.com/s/pYZxK3OFV8CH4VQET4_rLg">[Media_Report_CN2]</a>
+
+                                            <br>
+                                            Meissonic is a text-to-image masked diffusion model that can generate
+                                            high-resolution images. It is designed to run on consumer graphics cards.
+                                            The left figure is generated by Meissonic.
+                                            <br>
+                                        </p>
+                                    </td>
+                                    <td style="width: 10px;border: 0px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+         <table
+                        style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+                        <tbody>
+                            <tr style="border-width: 1px">
+                                <!-- <td style="border: 0px; padding: 20px">
+                                    <img src="paper/Prism.png" alt="guide"
+                                       style=" width: 100px; margin-top: 8px">
+                                </td> -->
+                                <td style="border: 0px; padding: 20px">
+                                    <div class="table-responsive">
+                                        <table style="width: 100%;" class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 100%; text-align: left; border: 0px">
+                                                        <p>
+                                                            <br>
+                                                            <b>Integrating View Conditions for Image Synthesis</b>
+                                                            <br>
+                                                            <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, <a href="https://dong-zhen.com/">Zhen Dong</a>, <a href="https://asfeng.github.io/">Aosong Feng</a>, Xiao Zhang, Kaicheng Zhou
+                                                            <br>
+                                                            International Joint Conferences on Artificial Intelligence (IJCAI) 2024
+                                                            <br>
+                                                            <a href="https://arxiv.org/abs/2310.16002">[Paper]</a>
+                                                            
+
+                                                            
+                                                            <!-- <br>
+                                                            
+                                                            <br> -->
+                                                        </p>
+                                                    </td>
+                                                    <td style="width: 10px;border: 0px">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+    <h2>Miscellaneous</h2>
+    <ul class="misc-list">
+        <li>Jinbin is a huge fan of Cities: Skylines and he loves designing and simulating cities. He've attended World Cities Summit (WCS) 2024 Conference! Also, Jinbin dreams of designing a game like Free Guy.</li>
+        <li>Jinbin enjoys traveling and has visited 20 countries.</li>
+        <li>Jinbin enjoys walking on the beach.</li>
+        <li>Jinbin founded and leads <a href="https://huggingface.co/MeissonFlow">MeissonFlow Research</a> for developing next-generation paradigms in generative modeling.</li>
+    </ul>
+
+    <div class="clustrmaps-wrap">
+        <script id='clustrmaps'
+            src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=Y9TH27aN8aIzbOU_6mOR3Oi70J95-HEqjFWoA2E0vYI&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
+    </div>
+
+    </div>
+    
+    <script>
+        function toggleNews() {
+            const newsMore = document.getElementById('newsMore');
+            const button = event.target;
+            
+            if (newsMore.classList.contains('news-hidden')) {
+                newsMore.classList.remove('news-hidden');
+                button.textContent = 'Show Less';
+            } else {
+                newsMore.classList.add('news-hidden');
+                button.textContent = 'Show More';
+            }
+        }
+
+        (function setupThemeToggle() {
+            const toggleButton = document.getElementById('themeToggle');
+            const themeKey = 'homepage-theme';
+
+            function applyTheme(theme) {
+                const isDark = theme === 'dark';
+                document.body.classList.toggle('dark-mode', isDark);
+                toggleButton.textContent = isDark ? 'Lights On' : 'Lights Off';
+            }
+
+            const savedTheme = localStorage.getItem(themeKey);
+            if (savedTheme === 'dark' || savedTheme === 'light') {
+                applyTheme(savedTheme);
+            } else {
+                applyTheme('light');
+            }
+
+            toggleButton.addEventListener('click', function () {
+                const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+                applyTheme(nextTheme);
+                localStorage.setItem(themeKey, nextTheme);
+            });
+        })();
+    </script>
+</body>
+
+</html>
