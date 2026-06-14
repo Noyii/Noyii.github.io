@@ -77,18 +77,36 @@
         .profile-info {
             flex: 1;
         }
+
+        .profile-aside {
+            width: 224px;
+            flex-shrink: 0;
+        }
         
         .profile-image {
-            width: 200px;
-            height: 200px;
-            flex-shrink: 0;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            border-radius: 14px;
         }
         
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 8px;
+            object-position: center 24%;
+            display: block;
+        }
+
+        .profile-caption {
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #707070;
+            font-style: italic;
+        }
+
+        .profile-caption strong {
+            font-weight: 700;
         }
         
         h1 {
@@ -330,16 +348,23 @@
         body.dark-mode .clustrmaps-wrap {
             border-top-color: #2f3440;
         }
+
+        body.dark-mode .profile-caption {
+            color: #a7adb8;
+        }
         
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 gap: 20px;
             }
+
+            .profile-aside {
+                width: min(210px, 52vw);
+            }
             
             .profile-image {
-                width: 150px;
-                height: 150px;
+                width: 100%;
             }
             
             .paper-item {
@@ -388,8 +413,11 @@
                     <a href="https://x.com/Jinbin_Bai">X</a>
                 </div>
             </div>
-            <div class="profile-image">
-                <!-- <img alt="profile photo" src="images/Jinbin_profile_new.jpg"> -->
+            <div class="profile-aside">
+                <div class="profile-image">
+                    <img alt="profile photo" src="images/jinbin_2026.jpg">
+                </div>
+                <p class="profile-caption"><strong>Figure 1.</strong> Jinbin Bai enjoying a sunny afternoon in San Francisco.</p>
             </div>
         </div>
 
@@ -703,6 +731,43 @@
 
     </table>
 
+     <table style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
+
+        <tbody>
+            <tr style="border-width: 1px">
+                <td style="border: 0px; padding: 20px">
+                    <div class="table-responsive">
+                        <table style="width: 100%;" class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 100%; text-align: left; border: 0px">
+                                        <p>
+                                            <br>
+                                            <b>HumanEdit: A High-Quality Human-Rewarded Dataset for Instruction-based Image Editing</b>
+                                            <br>
+                                            <strong><a href="https://noyii.github.io/">Jinbin Bai</a></strong>, Wei Chow, <a href="https://yangling0818.github.io/">Ling Yang</a>, <a href="https://lxtgh.github.io/">Xiangtai Li</a>, <a href="https://scholar.google.com/citations?user=lm9s-QgAAAAJ">Juncheng Li</a>, <a href="https://scholar.google.com/citations?user=YG0DFyYAAAAJ&hl=en">Hanwang Zhang</a>, <a href="https://scholar.google.com/citations?user=DNuiPHwAAAAJ">Shuicheng Yan</a>
+                                            <br>
+                                            <em>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2025 AI for Content Creation (<strong>AI4CC</strong>) Workshop</em>
+                                            <br>
+                                            <a href="https://arxiv.org/abs/2412.04280">[Paper]</a>
+                                            <a href="https://huggingface.co/datasets/BryanW/HumanEdit">[Dataset]</a>
+                                            <a href="https://github.com/viiika/HumanEdit">[Code]</a>
+                                            <br>
+                                            HumanEdit is a high-quality, human-rewarded dataset specifically designed for instruction-guided image editing, enabling precise and diverse image manipulations through open-form language instructions
+                                            <br>
+                                        </p>
+                                    </td>
+                                    <td style="width: 10px;border: 0px">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
 
     <table style="width: 100%; margin-left:auto;margin-right:auto; border-width: 0px; border-spacing: 0px;">
 
